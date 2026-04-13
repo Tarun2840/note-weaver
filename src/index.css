@@ -2,95 +2,97 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 210 20% 98%;
+    --foreground: 220 20% 10%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 220 20% 10%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 220 20% 10%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 217 91% 60%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 215 20% 95%;
+    --secondary-foreground: 220 20% 20%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 215 20% 95%;
+    --muted-foreground: 215 15% 50%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 217 91% 60%;
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 215 20% 90%;
+    --input: 215 20% 90%;
+    --ring: 217 91% 60%;
 
     --radius: 0.5rem;
 
-    --sidebar-background: 0 0% 98%;
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 220 20% 10%;
+    --sidebar-primary: 217 91% 60%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 215 20% 95%;
+    --sidebar-accent-foreground: 220 20% 20%;
+    --sidebar-border: 215 20% 90%;
+    --sidebar-ring: 217 91% 60%;
 
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --editor-bg: 220 20% 97%;
+    --editor-line: 215 20% 92%;
+    --note-hover: 217 91% 97%;
+    --note-active: 217 91% 94%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 222 47% 6%;
+    --foreground: 210 40% 96%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 222 47% 8%;
+    --card-foreground: 210 40% 96%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 222 47% 8%;
+    --popover-foreground: 210 40% 96%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 217 91% 60%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 217 33% 15%;
+    --secondary-foreground: 210 40% 96%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 217 33% 15%;
+    --muted-foreground: 215 20% 60%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 217 33% 15%;
+    --accent-foreground: 210 40% 96%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 96%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
+    --border: 217 33% 17%;
+    --input: 217 33% 17%;
+    --ring: 212 27% 84%;
+
+    --sidebar-background: 222 47% 8%;
+    --sidebar-foreground: 210 40% 96%;
+    --sidebar-primary: 217 91% 60%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-accent: 217 33% 15%;
+    --sidebar-accent-foreground: 210 40% 96%;
+    --sidebar-border: 217 33% 17%;
+    --sidebar-ring: 217 91% 60%;
+
+    --editor-bg: 222 47% 7%;
+    --editor-line: 217 33% 14%;
+    --note-hover: 217 50% 12%;
+    --note-active: 217 50% 15%;
   }
 }
 
@@ -100,6 +102,115 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans;
+    font-family: 'Inter', system-ui, sans-serif;
   }
+}
+
+/* Markdown preview styles */
+.markdown-preview {
+  @apply leading-relaxed;
+}
+
+.markdown-preview h1 {
+  @apply text-3xl font-bold mt-6 mb-3 text-foreground;
+}
+
+.markdown-preview h2 {
+  @apply text-2xl font-semibold mt-5 mb-2 text-foreground;
+}
+
+.markdown-preview h3 {
+  @apply text-xl font-semibold mt-4 mb-2 text-foreground;
+}
+
+.markdown-preview p {
+  @apply mb-3 text-foreground/90;
+}
+
+.markdown-preview strong {
+  @apply font-semibold text-foreground;
+}
+
+.markdown-preview em {
+  @apply italic;
+}
+
+.markdown-preview ul {
+  @apply list-disc pl-6 mb-3 space-y-1;
+}
+
+.markdown-preview ol {
+  @apply list-decimal pl-6 mb-3 space-y-1;
+}
+
+.markdown-preview li {
+  @apply text-foreground/90;
+}
+
+.markdown-preview a {
+  @apply text-primary underline hover:opacity-80 transition-opacity;
+}
+
+.markdown-preview code {
+  @apply px-1.5 py-0.5 rounded text-sm bg-secondary text-secondary-foreground;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.markdown-preview pre {
+  @apply p-4 rounded-lg mb-3 overflow-x-auto bg-secondary;
+}
+
+.markdown-preview pre code {
+  @apply p-0 bg-transparent;
+}
+
+.markdown-preview blockquote {
+  @apply border-l-4 border-primary/30 pl-4 italic text-muted-foreground my-3;
+}
+
+.markdown-preview hr {
+  @apply my-6 border-border;
+}
+
+.markdown-preview table {
+  @apply w-full border-collapse mb-3;
+}
+
+.markdown-preview th,
+.markdown-preview td {
+  @apply border border-border px-3 py-2 text-left;
+}
+
+.markdown-preview th {
+  @apply bg-secondary font-semibold;
+}
+
+/* Editor textarea */
+.editor-textarea {
+  font-family: 'JetBrains Mono', monospace;
+  @apply resize-none outline-none w-full h-full bg-transparent text-foreground;
+  tab-size: 2;
+  line-height: 1.7;
+}
+
+.editor-textarea::placeholder {
+  @apply text-muted-foreground/50;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-border rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-muted-foreground/30;
 }

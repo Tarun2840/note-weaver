@@ -1,16 +1,54 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { NotesList } from '@/components/NotesList';
+import { MarkdownEditor } from '@/components/MarkdownEditor';
+import { useNotes } from '@/hooks/useNotes';
+import { Loader2 } from 'lucide-react';
 
-// IMPORTANT: Fully REPLACE this with your own code
-const PlaceholderIndex = () => {
-  // PLACEHOLDER: Replace this entire return statement with the user's app.
-  // The inline background color is intentionally not part of the design system.
+const Index = () => {
+  const {
+    notes,
+    selectedNote,
+    selectedId,
+    loading,
+    saving,
+    searchQuery,
+    setSearchQuery,
+    setSelectedId,
+    createNote,
+    updateNote,
+    deleteNote,
+  } = useNotes();
+
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center h-screen bg-background">
+        <Loader2 className="h-6 w-6 animate-spin text-primary" />
+      </div>
+    );
+  }
+
   return (
-    <div className="flex min-h-screen items-center justify-center" style={{ backgroundColor: '#fcfbf8' }}>
-      <img data-lovable-blank-page-placeholder="REMOVE_THIS" src="/placeholder.svg" alt="Your app will live here!" />
+    <div className="flex h-screen bg-background">
+      {/* Sidebar */}
+      <div className="w-72 shrink-0">
+        <NotesList
+          notes={notes}
+          selectedId={selectedId}
+          searchQuery={searchQuery}
+          onSearchChange={setSearchQuery}
+          onSelect={setSelectedId}
+          onCreate={createNote}
+          onDelete={deleteNote}
+        />
+      </div>
+
+      {/* Editor */}
+      <MarkdownEditor
+        note={selectedNote}
+        saving={saving}
+        onUpdate={updateNote}
+      />
     </div>
   );
 };
-
-const Index = PlaceholderIndex;
 
 export default Index;
