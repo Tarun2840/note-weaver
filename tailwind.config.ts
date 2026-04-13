@@ -47,6 +47,9 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        "note-hover": "hsl(var(--note-hover))",
+        "note-active": "hsl(var(--note-active))",
+        "editor-bg": "hsl(var(--editor-bg))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
